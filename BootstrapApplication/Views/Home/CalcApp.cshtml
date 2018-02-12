@@ -1,0 +1,18 @@
+﻿@model int
+
+<h1>Calculator</h1>
+<form method="post" action="/Home/CalcApp">
+    Number one: <input type="number" name="numA">
+    Number two: <input type="number" name="numB">
+    <br />
+    I want to
+    <fieldset class="operation-row">
+        <input value="add" name="operation" type="radio">add</input>
+        <input value="subtract" name="operation" type="radio">subtract</input>
+        <input value="multiply" name="operation" type="radio">multiply</input>
+        <input value="divide" name="operation" type="radio">divide</input>
+    </fieldset>
+    <input type="submit">
+    <textarea readonly>@Model</textarea>
+</form>
+

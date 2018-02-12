@@ -26,5 +26,32 @@ namespace BootstrapApplication.Controllers
 
             return View();
         }
+
+        public ActionResult CalcApp(string numA, string numB, string operation)
+        {
+            var result = 0;
+            var x = 0;
+            var y = 0;
+            if (numA != null && numB != null && operation != null) {
+                x = int.Parse(numA);
+                y = int.Parse(numB);
+                switch (operation) {
+                    case "add":
+                        result = x + y;
+                        break;
+                    case "subtract":
+                        result = x - y;
+                        break;
+                    case "multiply":
+                        result = x * y;
+                        break;
+                    case "divide":
+                        result = x / y;
+                        break;
+                }
+            }
+
+            return View("CalcApp", result);
+        }
     }
 }
